@@ -1,0 +1,24 @@
+.skill {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: rgba(250, 199, 15, 0.3);
+
+    &__imgbox {
+        display: flex;
+        padding: 1rem;
+        gap: 1rem;
+        
+        div{
+            width: 45px;
+            height: 45px;
+            border-radius: 5px;
+            overflow: hidden;
+
+            img{
+                width: 45px;
+                object-fit: cover;
+            }
+        }
+    }
+}

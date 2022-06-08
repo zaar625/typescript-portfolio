@@ -1,0 +1,141 @@
+@use '../../scss/utils/' as *;
+.social{
+    display: flex;
+    flex-direction: column;
+    
+    .social-container {
+        padding-top: 1.5rem;
+        display: flex;
+        gap: 1rem;
+
+        @include mobile {
+            flex-wrap: wrap;
+        }
+    
+        .social__img {
+            width: 320px;
+            
+            .swiper-slide {
+                padding-top: 100%;
+                border-radius: 20px;
+                overflow: hidden;
+                position: relative;
+            
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    & > a {
+        align-items: center;
+        display: flex;
+        margin: auto 0 auto auto;
+        position: relative;
+
+        &:hover {
+            color:var(--main-color);
+            cursor: pointer;
+            &::before {
+                display: block;
+            }
+        }
+        &::before {
+            position: absolute;
+            content: "업무의 결과를 보시고 싶으신가요?";
+            width: max-content;
+            top: -25px;
+            right: 1px;
+            font-size: 0.825rem;
+            display: none;
+        }
+    }
+}
+
+// Social Description
+.des {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        
+        &__title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+            
+            & > span {
+                font-style: italic;
+            }
+        }
+        &__depart {
+            font-size: 0.825rem;
+            font-style: italic;
+        }
+    }
+
+    &__contents {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        &__key {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            
+            & > div {
+                display: flex;
+                flex-flow: wrap;
+                gap: 10px;
+                
+                span {
+                    background-color: var(--main-bg);
+                    border-radius: 20px;
+                    padding: 0.3rem 0.5rem;
+                    font-size: 0.825rem;
+                }
+            } 
+        }
+        
+        &__detail {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            & h4 {
+                margin-bottom: 5px;
+            }
+
+            & ul > li {
+                font-size: 0.825rem;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+
+// Swiper pagination - css
+.swiper-pagination-bullet {
+    background: var(--main-color);
+    opacity: 1;
+
+    &.swiper-pagination-bullet-active{
+        width: 30px;
+        border-radius: 1rem;
+        transition: .5s width;
+    }
+}
+
